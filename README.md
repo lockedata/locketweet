@@ -1,36 +1,38 @@
----
-title: "Pretty screenshots"
-author: "M. Salmon"
-date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{Vignette Title}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+locketweet
+==========
+
+The goal of locketweet is to ...
+
+Installation
+------------
+
+You can install locketweet from GitHub with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("lockedata/locketweet")
 ```
+
+Example
+-------
 
 See [this blog post](https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/) for more background info.
 
 The data about the blog is now generated in data-raw and available as data from the package!
 
-
-```{r}
+``` r
 library("magrittr")
 library("locketweet")
 data("lockedata_blog")
 class(lockedata_blog)
+#> [1] "tbl_df"     "tbl"        "data.frame"
 ```
 
 So we can generate screenshots using it. I'll be selfish and use my blog post as example!
 
-```{r}
+``` r
 
 
 height <- 1000
@@ -43,7 +45,7 @@ get_post_info(lockedata_blog[1,]) %>%
   purrr::walk(shot_region, path = "screenshots")  
 ```
 
-```{r}
+``` r
 imgs <- fs::dir_ls("screenshots")
 col_no <- ceiling(length(imgs)/2)
 if(length(imgs) != col_no*2) {
@@ -72,8 +74,8 @@ chibi <- magick::image_read(system.file("extdata/assets", "HappyDataScienceSteff
 magick::image_mosaic(c(all, chibi)) 
 ```
 
+<img src="C:\Users\Maelle\AppData\Local\Temp\Rtmp0G939u\file10802e0612fb.png" width="100%" />
 
-```{r}
+``` r
 fs::dir_delete("screenshots")
 ```
-
