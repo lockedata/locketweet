@@ -71,10 +71,12 @@ title <- magick::image_annotate(title, lockedata_blog$title[1], size = 50)
 all <- magick::image_append(c(title, all), stack = TRUE)
 chibi <- magick::image_read(system.file("extdata/assets", "HappyDataScienceSteffy_preview.png", package = "locketweet")) %>%
   magick::image_resize(paste0(width, "x", width))
-magick::image_mosaic(c(all, chibi)) 
+magick::image_mosaic(c(all, chibi)) %>%
+  magick::image_resize("500x500") %>%
+  magick::image_write("README_files/example.png")
 ```
 
-<img src="C:\Users\Maelle\AppData\Local\Temp\Rtmp0G939u\file10802e0612fb.png" width="100%" />
+![](README_files/example.png)
 
 ``` r
 fs::dir_delete("screenshots")
