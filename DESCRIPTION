@@ -1,0 +1,28 @@
+Package: locketweet
+Version: 0.0.0.9000
+Title: Helps Automatic Tweeting for Locke Data
+Description: The package will help automatic tweeting including webshooting and tweet text proposing.
+Authors@R: person("Maëlle", "Salmon", email = "maelle.salmon@yahoo.se", role = c("aut", "cre"))
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+ByteCompile: true
+RoxygenNote: 6.0.1.9000
+Suggests: 
+    gh,
+    dplyr,
+    purrr,
+    xml2,
+    fuzzyjoin,
+    knitr,
+    rmarkdown,
+    fs
+Imports: 
+    magrittr,
+    webshot,
+    magick,
+    stringr,
+    httr,
+    rvest,
+    tibble
+VignetteBuilder: knitr

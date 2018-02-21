@@ -1,0 +1,73 @@
+---
+title: "Pretty screenshots"
+author: "M. Salmon"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+See [this blog post](https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/) for more background info.
+
+The data about the blog is now generated in data-raw and available as data from the package!
+
+
+```{r}
+library("locketweet")
+data("lockedata_blog")
+class(lockedata_blog)
+```
+
+So we can generate screenshots using it. I'll be selfish and use my blog post as example!
+
+```{r}
+
+
+height <- 1000
+width <- 300
+
+fs::dir_create("screenshots")
+get_post_info(lockedata_blog[1,]) %>%
+  dplyr::filter(number > 1) %>%
+  split(.$header) %>%
+  purrr::walk(shot_region, path = "screenshots")  
+
+
+
+imgs <- fs::dir_ls("screenshots")
+col_no <- ceiling(length(imgs)/2)
+if(length(imgs) != col_no*2) {
+  img1 <- magick::image_blank(width, width, color = "#2165B6") 
+}else{
+  img1 <- NULL
+}
+
+imgs <- magick::image_read(imgs) %>%
+  magick::image_resize(geometry = paste0(width, "x", height))
+
+col1 <- magick::image_append(imgs[1:ceiling(length(imgs)/2)],
+                             stack = TRUE)
+col2 <- magick::image_append(imgs[(ceiling(length(imgs)/2) + 1): length(imgs)],
+                             stack = TRUE)
+if(!is.null(img1)){
+  col2 <- magick::image_append(c(col2, img1), stack = TRUE)
+}
+
+all <- magick::image_append(c(col1, col2))
+title <- magick::image_blank(width * 2, height, color = "#2165B6")
+title <- magick::image_annotate(title, "blabla")
+all <- magick::image_append(c(title, all), stack = TRUE)
+chibi <- magick::image_read(system.file("extdata", "HappyDataScienceSteffy_preview", package = "locketweet"))
+magick::image_mosaic(c(all, chibi))
+fs::dir_delete("screenshots")
+```
+
