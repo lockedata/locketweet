@@ -76,7 +76,8 @@ if(!is.null(img1)){
 
 all <- magick::image_append(c(col1, col2))
 title <- magick::image_blank(height * 2, 50, color = "#2165B6")
-title <- magick::image_annotate(title, lockedata_blog$title[1], size = 50)
+title <- magick::image_annotate(title, lockedata_blog$title[1], size = 50,
+                                font = "roboto")
 all <- magick::image_append(c(title, all), stack = TRUE)
 chibi <- magick::image_read(system.file("extdata/assets", "HappyDataScienceSteffy_preview.png", package = "locketweet")) %>%
   magick::image_resize(paste0(width, "x", width))
