@@ -2,3 +2,5 @@
 
 export(get_post_info)
 export(shot_region)
+export(webshot_prettyplease)
+importFrom(magrittr,"%>%")

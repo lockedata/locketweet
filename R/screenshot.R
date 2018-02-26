@@ -22,8 +22,9 @@ shot_region <- function(df, path){
                        number,
                        "-title",".png")
     webshot::webshot(url = url,
+                     selector = "p",
                      file = "webshot.png",
-                     cliprect = c(0, 0, 992, 200))
+                     expand = c(5, 5, 200, 5))
   }else{ #these are other regions
     filename <- paste0(path, "/", post_name,
                        number, "-",

@@ -3,7 +3,7 @@
 locketweet
 ==========
 
-The goal of locketweet is to ...
+The goal of locketweet is to help us get a collection of screenshots without too much effort.
 
 Installation
 ------------
@@ -15,69 +15,26 @@ You can install locketweet from GitHub with:
 devtools::install_github("lockedata/locketweet")
 ```
 
-Example
--------
+Examples
+--------
 
 See [this blog post](https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/) for more background info.
 
-The data about the blog is now generated in data-raw and available as data from the package!
-
 ``` r
-library("magrittr")
 library("locketweet")
-data("lockedata_blog")
-class(lockedata_blog)
-#> [1] "tbl_df"     "tbl"        "data.frame"
+webshot_prettyplease(url = "https://itsalocke.com/blog/auto-deploying-documentation-better-change-tracking-of-artefacts/",
+                     path = "README_files/example1.png")
+#> now webshoting!
+#> now prettifying!
 ```
 
-So we can generate screenshots using it. I'll be selfish and use my blog post as example!
+![](README_files/example1.png)
 
 ``` r
-
-
-height <- 1000
-width <- 300
-
-fs::dir_create("screenshots")
-get_post_info(lockedata_blog[1,]) %>%
-  dplyr::filter(number > 1) %>%
-  split(.$header) %>%
-  purrr::walk(shot_region, path = "screenshots")  
+webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/",
+                     path = "README_files/example2.png")
+#> now webshoting!
+#> now prettifying!
 ```
 
-``` r
-imgs <- fs::dir_ls("screenshots")
-col_no <- ceiling(length(imgs)/2)
-if(length(imgs) != col_no*2) {
-  img1 <- magick::image_blank(height, width, color = "#2165B6") 
-}else{
-  img1 <- NULL
-}
-
-imgs <- magick::image_read(imgs) %>%
-  magick::image_resize(geometry = paste0(height, "x", width))
-
-col1 <- magick::image_append(imgs[1:ceiling(length(imgs)/2)],
-                             stack = TRUE)
-col2 <- magick::image_append(imgs[(ceiling(length(imgs)/2) + 1): length(imgs)],
-                             stack = TRUE)
-if(!is.null(img1)){
-  col2 <- magick::image_append(c(col2, img1), stack = TRUE)
-}
-
-all <- magick::image_append(c(col1, col2))
-title <- magick::image_blank(height * 2, 50, color = "#2165B6")
-title <- magick::image_annotate(title, lockedata_blog$title[1], size = 50)
-all <- magick::image_append(c(title, all), stack = TRUE)
-chibi <- magick::image_read(system.file("extdata/assets", "HappyDataScienceSteffy_preview.png", package = "locketweet")) %>%
-  magick::image_resize(paste0(width, "x", width))
-magick::image_mosaic(c(all, chibi)) %>%
-  magick::image_resize("500x500") %>%
-  magick::image_write("README_files/example.png")
-```
-
-![](README_files/example.png)
-
-``` r
-fs::dir_delete("screenshots")
-```
+![](README_files/example2.png)
