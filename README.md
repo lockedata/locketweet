@@ -24,7 +24,7 @@ See [this blog post](https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post
 library("locketweet")
 webshot_prettyplease(url = "https://itsalocke.com/blog/auto-deploying-documentation-better-change-tracking-of-artefacts/",
                      path = "README_files/example1.png")
-#> now webshoting!
+#> now webshooting!
 #> now prettifying!
 ```
 
@@ -33,7 +33,7 @@ webshot_prettyplease(url = "https://itsalocke.com/blog/auto-deploying-documentat
 ``` r
 webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/",
                      path = "README_files/example2.png")
-#> now webshoting!
+#> now webshooting!
 #> now prettifying!
 ```
 

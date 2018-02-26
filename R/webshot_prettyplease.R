@@ -17,7 +17,7 @@ webshot_prettyplease <- function(url, path){
   tempdir_path <- paste0(tempdir(), "\\screenshots")
 
   # webshot itself
-  message("now webshoting!")
+  message("now webshooting!")
   fs::dir_create(tempdir_path)
   info <- get_post_info(df)
   if(nrow(info) < 3){
