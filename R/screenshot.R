@@ -1,4 +1,12 @@
-
+safe_webshot <- function(...){
+  test <- try(webshot::webshot(...), silent = TRUE)
+  try <- 1
+  while(class(test) == "error" & try < 5){
+    try <- try + 1
+    message(paste0("Oops screenshot failed, trying for the ", "d time, fingers crossed!"))
+    test <- try(webshot::webshot(...), silent = TRUE)
+  }
+}
 #'
 #' Webshot regions of a blog post
 #'
@@ -21,7 +29,7 @@ shot_region <- function(df, path){
     filename <- paste0(path, "/", post_name,
                        number,
                        "-title",".png")
-    webshot::webshot(url = url,
+    safe_webshot(url = url,
                      selector = "p",
                      file = "webshot.png",
                      expand = c(5, 5, 200, 5))
@@ -29,7 +37,7 @@ shot_region <- function(df, path){
     filename <- paste0(path, "/", post_name,
                        number, "-",
                        header,".png")
-    webshot::webshot(url = url,
+    safe_webshot(url = url,
                      file = "webshot.png",
                      selector = paste0("#", header),
                      expand = c(5, 5, 200, 5))
