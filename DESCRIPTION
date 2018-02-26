@@ -25,5 +25,7 @@ Imports:
     httr,
     rvest,
     tibble,
-    praise
+    praise,
+    graphics,
+    grDevices
 VignetteBuilder: knitr

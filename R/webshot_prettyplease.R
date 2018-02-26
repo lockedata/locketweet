@@ -107,10 +107,10 @@ webshot_prettyplease <- function(url, path){
                                    font = "Roboto")
 
   pretty <- magick::image_draw(pretty)
-  polygon(x = c(width * 0.6, width * 0.6, width * 0.55),
+  graphics::polygon(x = c(width * 0.6, width * 0.6, width * 0.55),
           y = c(height * 0.5 + 20, height * 0.5 + 10, height * 0.7),
           col = "white", border = "white")
-  dev.off()
+  grDevices::dev.off()
   magick::image_write(pretty, path = path)
   # clean!
   fs::dir_delete(tempdir_path)
