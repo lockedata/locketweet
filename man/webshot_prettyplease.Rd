@@ -4,7 +4,7 @@
 \alias{webshot_prettyplease}
 \title{Title}
 \usage{
-webshot_prettyplease(url, path)
+webshot_prettyplease(url)
 }
 \arguments{
 \item{url}{url to post}
@@ -13,6 +13,5 @@ webshot_prettyplease(url, path)
 Title
 }
 \examples{
-webshot_prettyplease("https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/",
-                               path = "here.png")
+webshot_prettyplease("https://itsalocke.com/blog/center-across-selection/")
 }

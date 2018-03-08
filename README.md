@@ -15,26 +15,25 @@ You can install locketweet from GitHub with:
 devtools::install_github("lockedata/locketweet")
 ```
 
+See [this blog post](https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/) for more background info.
+
+Evergreen posts
+---------------
+
+See \[inst/extdata/evergreen.csv\].
+
 Examples
 --------
 
-See [this blog post](https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/) for more background info.
-
 ``` r
 library("locketweet")
-webshot_prettyplease(url = "https://itsalocke.com/blog/auto-deploying-documentation-better-change-tracking-of-artefacts/",
-                     path = "README_files/example1.png")
-#> now webshooting!
-#> now prettifying!
+webshot_prettyplease(url = "https://itsalocke.com/blog/auto-deploying-documentation-better-change-tracking-of-artefacts/")
 ```
 
-![](README_files/example1.png)
+<img src="man/figures/README-unnamed-chunk-1-1.png" width="100%" />
 
 ``` r
-webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/",
-                     path = "README_files/example2.png")
-#> now webshooting!
-#> now prettifying!
+webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/")
 ```
 
-![](README_files/example2.png)
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
