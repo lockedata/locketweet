@@ -61,7 +61,7 @@ webshot_prettyplease <- function(url){
                            text = "Made with <3 using R",
                            font = "roboto") %>%
     magick::image_annotate(compliment,
-                           location = "+220+100",
+                           location = "+225+100",
                            size = 18, font = "Roboto")
 
   pretty

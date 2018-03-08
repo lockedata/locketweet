@@ -30,7 +30,7 @@ See [this blog post](https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post
 
 ## Evergreen posts
 
-See [inst/extdata/evergreen.csv].
+See [inst/extdata/evergreen.csv](inst/extdata/evergreen.csv).
 
 
 ## Examples
