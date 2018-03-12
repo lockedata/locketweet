@@ -4,14 +4,16 @@
 \alias{webshot_prettyplease}
 \title{Title}
 \usage{
-webshot_prettyplease(url)
+webshot_prettyplease(url, seed = sum(utf8ToInt(url)))
 }
 \arguments{
 \item{url}{url to post}
+
+\item{seed}{random seed}
 }
 \description{
 Title
 }
 \examples{
-webshot_prettyplease("https://itsalocke.com/blog/center-across-selection/")
+webshot_prettyplease("https://itsalocke.com/blog/auto-deploying-documentation-better-change-tracking-of-artefacts/")
 }
