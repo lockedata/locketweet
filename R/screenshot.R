@@ -15,9 +15,6 @@ safe_webshot <- function(...){
 #'
 #' @return Nothing, it does produce screenshots in the path,
 #' using the post_name and numbers to name files.
-#' @export
-#'
-#' @examples
 shot_region <- function(df, path){
   # extract information from the data.frame
   header <- df$header
@@ -61,9 +58,6 @@ shot_region <- function(df, path){
 #' @return A tibble with the blog post name and url and for each
 #' section its header and a number, from 0 (title) to the number
 #' of headers
-#' @export
-#'
-#' @examples
 get_post_info <- function(post_df){
   url <- post_df$url[1]
   post_name <- stringr::str_replace(post_df$name[1],
@@ -78,5 +72,5 @@ get_post_info <- function(post_df){
   tibble::tibble(url = url,
                  post_name = post_name,
                  header = c("", headers),
-                 number = seq_along(header))
+                 number = seq_along(.data$header))
 }

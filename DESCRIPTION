@@ -27,5 +27,7 @@ Imports:
     tibble,
     praise,
     graphics,
-    grDevices
+    grDevices,
+    withr
+Depends: R (>= 2.10)
 VignetteBuilder: knitr

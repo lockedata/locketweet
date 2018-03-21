@@ -5,10 +5,11 @@
 #' @param url url to post
 #' @param seed random seed
 #'
-#' @return
+#' @return A magick image
 #' @export
 #'
-#' @examples webshot_prettyplease("https://itsalocke.com/blog/auto-deploying-documentation-better-change-tracking-of-artefacts/")
+#' @examples
+#' webshot_prettyplease("https://itsalocke.com/blog/auto-deploying-documentation-better-change-tracking-of-artefacts/")
 webshot_prettyplease <- function(url,
                                  seed = sum(utf8ToInt(url))){
 
@@ -23,12 +24,11 @@ webshot_prettyplease <- function(url,
                           cliprect = c(180, 0, 550, 550))
   head <-  magick::image_crop(head, "550x500+0+50")
   info_head <- magick::image_info(head)
-  gradient_path <- tempfile(fileext = ".png")
-  shell(paste0('convert -size ', info_head$width, 'x',info_head$height,
-               ' gradient:"rgba(255,255,255,0.7)"-none ',
-               gradient_path))
-  gradient <- magick::image_read(gradient_path) %>% magick::image_flip()
-  file.remove(gradient_path)
+  gradient <- magick::image_blank(info_head$width,
+                                  info_head$height,
+                                  pseudo_image = 'gradient:rgba(255,255,255,0.7)-none') %>%
+    magick::image_flip()
+
   head <- magick::image_composite(head, gradient)
   # background
   empty_rect <- magick::image_blank(width, height, color = "#2165B6")

@@ -11,6 +11,9 @@ webshot_prettyplease(url, seed = sum(utf8ToInt(url)))
 
 \item{seed}{random seed}
 }
+\value{
+A magick image
+}
 \description{
 Title
 }
