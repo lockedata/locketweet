@@ -53,4 +53,11 @@ gh_info <- dplyr::mutate(gh_info,
 all_info <- fuzzyjoin::stringdist_left_join(blog, gh_info,
                                             by = c("url" = "false_url"),
                                             max_dist = 3)
-all_info$url[(is.na(all_info$raw))]
+# hard code the module thing
+good <- all_info[all_info$url == "https://itsalocke.com/blog/shiny-module-design-patterns-pass-module-inputs-to-other-modules/",][1,]
+all_info <- all_info[all_info$url != "https://itsalocke.com/blog/shiny-module-design-patterns-pass-module-inputs-to-other-modules/",]
+all_info <- rbind(all_info, good)
+
+good <- all_info[all_info$url == "https://itsalocke.com/blog/shiny-module-design-patterns-pass-module-input-to-other-modules/",][2,]
+all_info <- all_info[all_info$url != "https://itsalocke.com/blog/shiny-module-design-patterns-pass-module-input-to-other-modules/",]
+all_info <- rbind(all_info, good)

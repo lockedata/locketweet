@@ -10,7 +10,7 @@ posts <- gh::gh("/repos/:owner/:repo/contents/:path",
 gh_posts <- tibble::tibble(name = vapply(posts, "[[", "", "name"),
                            path = vapply(posts, "[[", "", "path"),
                            raw = vapply(posts, "[[", "", "download_url"))
-
+gh_posts <- gh_posts[gh_posts$name != ".DS_Store",]
 # get links to pics posted in each post
 get_pics <- function(path){
     message(path)
@@ -76,3 +76,7 @@ get_one_yaml <- function(path){
 info <- purrr::map_df(gh_posts$path, get_one_yaml)
 gh_posts <- dplyr::left_join(gh_posts, info, by = "path")
 gh_info <- gh_posts
+gh_info <- dplyr::mutate(gh_info,
+                         title = stringr::str_replace_all(title, "â€¦", "!"),
+                         title = stringr::str_replace_all(title, "â€“", "-"),
+                         title = stringr::str_replace_all(title, "â€™", "'"))
