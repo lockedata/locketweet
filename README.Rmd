@@ -47,6 +47,10 @@ webshot_prettyplease("https://itsalocke.com/blog/using-travis-make-sure-you-use-
 ```
 
 ```{r}
+webshot_prettyplease("https://itsalocke.com/blog/connect-to-google-sheets-in-power-bi-using-r/")
+```
+
+```{r}
 webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/")
 ```
 

@@ -54,7 +54,13 @@ webshot_prettyplease("https://itsalocke.com/blog/using-travis-make-sure-you-use-
 <img src="man/figures/README-unnamed-chunk-1-4.png" width="100%" />
 
 ``` r
-webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/")
+webshot_prettyplease("https://itsalocke.com/blog/connect-to-google-sheets-in-power-bi-using-r/")
 ```
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
+``` r
+webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/")
+```
+
+<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
