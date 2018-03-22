@@ -1,12 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-locketweet
-==========
 
-The goal of locketweet is to help us get a collection of screenshots without too much effort.
+# locketweet
 
-Installation
-------------
+The goal of locketweet is to help us get a collection of screenshots
+without too much effort.
+
+## Installation
 
 You can install locketweet from GitHub with:
 
@@ -15,15 +15,15 @@ You can install locketweet from GitHub with:
 devtools::install_github("lockedata/locketweet")
 ```
 
-See [this blog post](https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/) for more background info.
+See [this blog
+post](https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/)
+for more background info.
 
-Evergreen posts
----------------
+## Evergreen posts
 
 See [inst/extdata/evergreen.csv](inst/extdata/evergreen.csv).
 
-Examples
---------
+## Examples
 
 ``` r
 library("locketweet")
@@ -31,6 +31,27 @@ webshot_prettyplease(url = "https://itsalocke.com/blog/auto-deploying-documentat
 ```
 
 <img src="man/figures/README-unnamed-chunk-1-1.png" width="100%" />
+
+``` r
+
+webshot_prettyplease("https://itsalocke.com/blog/ssis-basics-and-gotchas--presentation-and-resources/")
+```
+
+<img src="man/figures/README-unnamed-chunk-1-2.png" width="100%" />
+
+``` r
+
+webshot_prettyplease("https://itsalocke.com/blog/shiny-module-design-patterns-pass-module-input-to-other-modules/")
+```
+
+<img src="man/figures/README-unnamed-chunk-1-3.png" width="100%" />
+
+``` r
+
+webshot_prettyplease("https://itsalocke.com/blog/using-travis-make-sure-you-use-a-github-pat/")
+```
+
+<img src="man/figures/README-unnamed-chunk-1-4.png" width="100%" />
 
 ``` r
 webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/")

@@ -38,6 +38,12 @@ See [inst/extdata/evergreen.csv](inst/extdata/evergreen.csv).
 ```{r}
 library("locketweet")
 webshot_prettyplease(url = "https://itsalocke.com/blog/auto-deploying-documentation-better-change-tracking-of-artefacts/")
+
+webshot_prettyplease("https://itsalocke.com/blog/ssis-basics-and-gotchas--presentation-and-resources/")
+
+webshot_prettyplease("https://itsalocke.com/blog/shiny-module-design-patterns-pass-module-input-to-other-modules/")
+
+webshot_prettyplease("https://itsalocke.com/blog/using-travis-make-sure-you-use-a-github-pat/")
 ```
 
 ```{r}
