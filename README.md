@@ -64,3 +64,9 @@ webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-bl
 ```
 
 <img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+
+``` r
+webshot_prettyplease(url = "https://itsalocke.com/blog/a-particles-arly-fun-book-draw/")
+```
+
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />

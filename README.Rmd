@@ -54,3 +54,7 @@ webshot_prettyplease("https://itsalocke.com/blog/connect-to-google-sheets-in-pow
 webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-blog-post-without-even-reading-it/")
 ```
 
+```{r}
+webshot_prettyplease(url = "https://itsalocke.com/blog/a-particles-arly-fun-book-draw/")
+```
+
