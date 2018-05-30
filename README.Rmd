@@ -58,3 +58,5 @@ webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-maraaverickfy-a-bl
 webshot_prettyplease(url = "https://itsalocke.com/blog/a-particles-arly-fun-book-draw/")
 ```
 
+```{r}
+webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-use-an-r-interface-with-airtable-api/")

@@ -70,3 +70,9 @@ webshot_prettyplease(url = "https://itsalocke.com/blog/a-particles-arly-fun-book
 ```
 
 <img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
+
+``` r
+webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-use-an-r-interface-with-airtable-api/")
+```
+
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />

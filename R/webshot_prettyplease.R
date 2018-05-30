@@ -43,7 +43,15 @@ webshot_prettyplease <- function(url,
 
 
   # chibi
-  author <- tolower(df$author)
+  author <- df$author
+  if(author == "Amy McDougall"){
+    author <- "amy"
+  }
+  if(author == "Ellen Talbot"){
+    author <- "ellen"
+  }
+
+  author <- tolower(author)
   chibi_filename <- sample(chibis$chibi[chibis$person == author], size = 1)
   chibi_path <- system.file("extdata/assets", chibi_filename, package = "locketweet")
   chibi <- magick::image_read(chibi_path) %>%
