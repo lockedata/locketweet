@@ -16,7 +16,7 @@ webshot_prettyplease <- function(url,
   width <- 1200
   height <- 600
 
-  df <- lockedata_blog[lockedata_blog$url == url,]
+  df <- locketweet::lockedata_blog[locketweet::lockedata_blog$url == url,]
 
   # head
   head <-  magick_webshot(url = url,
