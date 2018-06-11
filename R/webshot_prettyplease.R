@@ -72,7 +72,8 @@ webshot_prettyplease <- function(url,
   pretty <- empty_rect %>%
     magick::image_composite(bubble, offset = "+215+20")%>%
     magick::image_annotate(paste0(" ", toupper(df$title), " "),
-                           size = 40,
+                           size = ifelse(stringr::str_length(df$title) < 70,
+                                         40, 35),
                            font = "Contrail One",
                            color = "white") %>%
     magick::image_composite(logo, offset = "+1150+50") %>%

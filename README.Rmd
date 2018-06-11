@@ -9,7 +9,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  cache = TRUE
 )
 ```
 # locketweet
@@ -60,3 +61,12 @@ webshot_prettyplease(url = "https://itsalocke.com/blog/a-particles-arly-fun-book
 
 ```{r}
 webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-use-an-r-interface-with-airtable-api/")
+```
+
+```{r}
+webshot_prettyplease(url = "https://itsalocke.com/blog/r-quick-tip-parameter-re-use-within-rmarkdown-yaml/")
+```
+
+
+
+
