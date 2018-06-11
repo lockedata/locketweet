@@ -67,6 +67,8 @@ webshot_prettyplease(url = "https://itsalocke.com/blog/how-to-use-an-r-interface
 webshot_prettyplease(url = "https://itsalocke.com/blog/r-quick-tip-parameter-re-use-within-rmarkdown-yaml/")
 ```
 
-
+```{r}
+webshot_prettyplease(url = "https://itsalocke.com/blog/python-and-tidyverse/")
+```
 
 

@@ -56,7 +56,14 @@ webshot_prettyplease <- function(url,
   }
 
   author <- tolower(author)
-  chibi_filename <- sample(chibis$chibi[chibis$person == author], size = 1)
+
+  if(author == "leo"){
+    chibi_filename <- sample(chibis$chibi[chibis$person == "steph"], size = 1)
+  }else{
+    chibi_filename <- sample(chibis$chibi[chibis$person == author], size = 1)
+  }
+
+
   chibi_path <- system.file("extdata/assets", chibi_filename, package = "locketweet")
   chibi <- magick::image_read(chibi_path) %>%
     magick::image_resize(paste0("250x", height - 20))
@@ -65,7 +72,14 @@ webshot_prettyplease <- function(url,
 
   bubble <- magick::image_read(system.file("extdata/assets", "rect933.png", package = "locketweet")) %>%
     magick::image_resize("250x250")
-  compliment <- withr::with_seed(seed, {praise::praise(template = " Read my ${adjective} post! ")})
+
+  if(author == "leo"){
+    compliment <- withr::with_seed(seed, {praise::praise(template = " Read this ${adjective} post! ")})
+  }else{
+    compliment <- withr::with_seed(seed, {praise::praise(template = " Read my ${adjective} post! ")})
+  }
+
+
 
 
   # all

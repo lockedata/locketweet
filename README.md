@@ -82,3 +82,9 @@ webshot_prettyplease(url = "https://itsalocke.com/blog/r-quick-tip-parameter-re-
 ```
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
+``` r
+webshot_prettyplease(url = "https://itsalocke.com/blog/python-and-tidyverse/")
+```
+
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
