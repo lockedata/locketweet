@@ -7,6 +7,7 @@ posts <- gh::gh("/repos/:owner/:repo/contents/:path",
                 repo = "blog",
                 path = "content/posts")
 
+posts <- posts[vapply(posts, "[[", "", "type") != "dir"]
 gh_posts <- tibble::tibble(name = vapply(posts, "[[", "", "name"),
                            path = vapply(posts, "[[", "", "path"),
                            raw = vapply(posts, "[[", "", "download_url"))
