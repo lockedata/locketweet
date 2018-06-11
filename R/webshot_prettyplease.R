@@ -1,11 +1,14 @@
-#' Title
+#' Produces a pretty screenshot collage for an URL
+#'
+#' Produces a pretty screenshot collage for an URL
+#' from Locke Data blog
 #'
 #' @importFrom magrittr "%>%"
 #'
-#' @param url url to post
+#' @param url URL to blog post
 #' @param seed random seed
 #'
-#' @return A magick image
+#' @return A  \code{magick} image object
 #' @export
 #'
 #' @examples

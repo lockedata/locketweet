@@ -2,20 +2,21 @@
 % Please edit documentation in R/webshot_prettyplease.R
 \name{webshot_prettyplease}
 \alias{webshot_prettyplease}
-\title{Title}
+\title{Produces a pretty screenshot collage for an URL}
 \usage{
 webshot_prettyplease(url, seed = sum(utf8ToInt(url)))
 }
 \arguments{
-\item{url}{url to post}
+\item{url}{URL to blog post}
 
 \item{seed}{random seed}
 }
 \value{
-A magick image
+A  \code{magick} image object
 }
 \description{
-Title
+Produces a pretty screenshot collage for an URL
+from Locke Data blog
 }
 \examples{
 webshot_prettyplease("https://itsalocke.com/blog/auto-deploying-documentation-better-change-tracking-of-artefacts/")
